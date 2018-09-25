@@ -7,5 +7,5 @@ path_root=$(dirname "$path_script")
 
 pushd $path_root/../jbakery-arguments
 export JAVA_HOME=$(dirname $(dirname $(readlink -f $(which java))))
-mvn --batch-mode release:clean release:prepare
+mvn release:clean release:prepare
 popd
