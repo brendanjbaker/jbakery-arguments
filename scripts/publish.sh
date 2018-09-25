@@ -3,8 +3,9 @@
 set -euxo pipefail
 
 path_script=$(readlink -f "$0")
+path_root=$(dirname "$path_script")
 
-pushd $path_script/../jbakery-arguments
+pushd $path_root/../jbakery-arguments
 export JAVA_HOME=$(dirname $(dirname $(readlink -f $(which java))))
 mvn --batch-mode release:clean release:prepare
 popd
