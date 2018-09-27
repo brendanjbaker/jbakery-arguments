@@ -15,6 +15,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>10</maven.compiler.source>
 		<maven.compiler.target>10</maven.compiler.target>
+		<repository.url>file:///tmp/maven-repository/releases</repository.url>
 	</properties>
 
 	<developers>
@@ -36,7 +37,7 @@
 	<distributionManagement>
 		<repository>
 			<id>releases</id>
-			<url>file:///tmp/maven-repository/releases</url>
+			<url>${repository.url}</url>
 		</repository>
 	</distributionManagement>
 
