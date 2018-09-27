@@ -1,40 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
 	<modelVersion>4.0.0</modelVersion>
+
 	<groupId>org.jbakery</groupId>
 	<artifactId>jbakery-arguments</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>1.0.0</version>
+
+	<name>jbakery-arguments</name>
 	<description>Argument-checking facilities.</description>
-	<packaging>jar</packaging>
+	<url>https://jbakery.org</url>
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>10</maven.compiler.source>
 		<maven.compiler.target>10</maven.compiler.target>
 	</properties>
+
+	<developers>
+		<developer>
+			<name>Brendan J. Baker</name>
+		</developer>
+	</developers>
+
+	<licenses>
+		<license>
+			<name>MIT License</name>
+		</license>
+	</licenses>
+
 	<scm>
-		<url>https://github.com/brendanjbaker/jbakery-arguments</url>
-		<connection>scm:git:git://github.com/brendanjbaker/jbakery-arguments.git</connection>
-		<developerConnection>scm:git:git@github.com:brendanjbaker/jbakery-arguments.git</developerConnection>
+		<url>https://github.com/brendanjbaker/jbakery-arguments.git</url>
 	</scm>
-	<parent>
-		<groupId>org.sonatype.oss</groupId>
-		<artifactId>oss-parent</artifactId>
-		<version>9</version>
-	</parent>
+
+	<distributionManagement>
+		<repository>
+			<id>releases</id>
+			<url>file:///tmp/maven-repository/releases</url>
+		</repository>
+	</distributionManagement>
+
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-release-plugin</artifactId>
-				<version>2.5.3</version>
-				<configuration>
-					<developmentVersion>${project.version}</developmentVersion>
-					<releaseVersion>${project.version}</releaseVersion>
-					<remoteTagging>false</remoteTagging>
-					<suppressCommitBeforeTag>true</suppressCommitBeforeTag>
-					<tag>${project.version}</tag>
-				</configuration>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>3.0.1</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>3.0.1</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
+
 </project>
