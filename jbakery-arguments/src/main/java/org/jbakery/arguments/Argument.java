@@ -46,6 +46,9 @@ public class Argument
 
 	public static <T> T notNull(T argument, String argumentName)
 	{
+		if (argumentName == null)
+			throw new NullArgumentException("argumentName");
+
 		if (argument == null)
 			throw new NullArgumentException(argumentName);
 
