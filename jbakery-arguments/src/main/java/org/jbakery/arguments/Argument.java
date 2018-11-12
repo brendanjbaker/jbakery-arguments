@@ -1,6 +1,6 @@
 package org.jbakery.arguments;
 
-public class Argument
+public final class Argument
 {
 	private Argument() { }
 
