@@ -4,6 +4,17 @@ public final class Argument
 {
 	private Argument() { }
 
+	public static String notEmpty(String argument, String argumentName)
+	{
+		Argument.notNull(argumentName, "argumentName");
+		Argument.notNull(argument, argumentName);
+
+		if (argument.isEmpty())
+			throw new EmptyArgumentException(argumentName);
+
+		return argument;
+	}
+
 	public static byte notNegative(byte argument, String argumentName)
 	{
 		Argument.notNull(argumentName, "argumentName");
@@ -51,6 +62,16 @@ public final class Argument
 
 		if (argument == null)
 			throw new NullArgumentException(argumentName);
+
+		return argument;
+	}
+
+	public static String notNullOrEmpty(String argument, String argumentName)
+	{
+		Argument.notNull(argumentName, "argumentName");
+
+		Argument.notNull(argument, argumentName);
+		Argument.notEmpty(argument, argumentName);
 
 		return argument;
 	}
