@@ -1,10 +1,10 @@
 package org.jbakery.arguments;
 
 public class NegativeArgumentException
-	extends RuntimeException
+	extends ArgumentException
 {
 	public NegativeArgumentException(String argumentName)
 	{
-		super(String.format("Argument \"%s\" may not be negative.", argumentName));
+		super(argumentName, "May not be negative.");
 	}
 }

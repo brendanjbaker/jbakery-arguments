@@ -1,10 +1,10 @@
 package org.jbakery.arguments;
 
 public class NullArgumentException
-	extends RuntimeException
+	extends ArgumentException
 {
 	public NullArgumentException(String argumentName)
 	{
-		super(String.format("Argument \"%s\" may not be null.", argumentName));
+		super(argumentName, "May not be null.");
 	}
 }
