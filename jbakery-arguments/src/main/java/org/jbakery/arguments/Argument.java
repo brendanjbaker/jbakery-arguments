@@ -55,6 +55,42 @@ public final class Argument
 		return argument;
 	}
 
+	public static byte notNegativeOrZero(byte argument, String argumentName)
+	{
+		Argument.notNull(argumentName, "argumentName");
+		Argument.notNegative(argument, argumentName);
+		Argument.notZero(argument, argumentName);
+
+		return argument;
+	}
+
+	public static short notNegativeOrZero(short argument, String argumentName)
+	{
+		Argument.notNull(argumentName, "argumentName");
+		Argument.notNegative(argument, argumentName);
+		Argument.notZero(argument, argumentName);
+
+		return argument;
+	}
+
+	public static int notNegativeOrZero(int argument, String argumentName)
+	{
+		Argument.notNull(argumentName, "argumentName");
+		Argument.notNegative(argument, argumentName);
+		Argument.notZero(argument, argumentName);
+
+		return argument;
+	}
+
+	public static long notNegativeOrZero(long argument, String argumentName)
+	{
+		Argument.notNull(argumentName, "argumentName");
+		Argument.notNegative(argument, argumentName);
+		Argument.notZero(argument, argumentName);
+
+		return argument;
+	}
+
 	public static <T> T notNull(T argument, String argumentName)
 	{
 		if (argumentName == null)
@@ -72,6 +108,46 @@ public final class Argument
 
 		Argument.notNull(argument, argumentName);
 		Argument.notEmpty(argument, argumentName);
+
+		return argument;
+	}
+
+	public static byte notZero(byte argument, String argumentName)
+	{
+		Argument.notNull(argumentName, "argumentName");
+
+		if (argument == 0)
+			throw new ZeroArgumentException(argumentName);
+
+		return argument;
+	}
+
+	public static short notZero(short argument, String argumentName)
+	{
+		Argument.notNull(argumentName, "argumentName");
+
+		if (argument == 0)
+			throw new ZeroArgumentException(argumentName);
+
+		return argument;
+	}
+
+	public static int notZero(int argument, String argumentName)
+	{
+		Argument.notNull(argumentName, "argumentName");
+
+		if (argument == 0)
+			throw new ZeroArgumentException(argumentName);
+
+		return argument;
+	}
+
+	public static long notZero(long argument, String argumentName)
+	{
+		Argument.notNull(argumentName, "argumentName");
+
+		if (argument == 0)
+			throw new ZeroArgumentException(argumentName);
 
 		return argument;
 	}
